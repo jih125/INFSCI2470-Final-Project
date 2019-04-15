@@ -2,7 +2,6 @@
   <div class="challenge">
     <v-container grid-list-xl text-xs-center>
       <v-layout row wrap>
-        <v-flex xl10 offset-1></v-flex>
         <v-flex xl10 offset-xl1>
           <v-card>
             <v-container fill-height fluid>
