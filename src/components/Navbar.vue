@@ -8,7 +8,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
-        <v-btn flat v-for="item in menu" :key="item.icon" :to="item.link">
+        <v-btn flat v-for="item in menuItems" :key="item.icon" :to="item.link">
           <v-icon left dark>{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
@@ -60,25 +60,24 @@ export default {
     return {
       sideNav: false,
       dialog: false,
-      menu: [
+      menuItems: [
         {
           icon: "games",
           title: "Start Quiz!",
-          link: "/Start"
+          link: "/Home"
         },
-        { icon: "people", title: "Challenge", link: "./views/Challenge" },
-        { icon: "person", title: "Profile", link: "./views/Profile" }
-        // { icon: "exit_to_app", title: "Sign Out", link: "./views/Login" }
+        { icon: "people", title: "Challenge", link: "/Challange" },
+        { icon: "person", title: "Profile", link: "/Profile" }
       ],
       list: [
         {
           icon: "games",
           title: "Start Quiz!",
-          link: "/Start"
+          link: "/Home"
         },
-        { icon: "people", title: "Challenge", link: "./views/Challenge" },
-        { icon: "person", title: "Profile", link: "./views/Profile" },
-        { icon: "exit_to_app", title: "Sign Out", link: "./views/Login" }
+        { icon: "people", title: "Challenge", link: "/Challenge" },
+        { icon: "person", title: "Profile", link: "/Profile" },
+        { icon: "exit_to_app", title: "Sign Out", link: "/Login" }
       ]
     };
   }
