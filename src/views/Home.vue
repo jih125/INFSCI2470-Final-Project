@@ -2,9 +2,19 @@
   <div class="dashboard">
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
-        <v-flex grow md7>
+        <v-flex grow xl12 md6>
           <v-card>
-            <v-tabs centered show-arrows>
+            <v-select
+              v-model="schoolPicker"
+              :items="school"
+              :menu-props="{ maxHeight: '400' }"
+              label="Select"
+              solo
+              hint="Select your school"
+              persistent-hint
+            ></v-select>
+
+            <!-- <v-tabs centered show-arrows>
               <v-tabs-slider></v-tabs-slider>
               <v-tab v-for="item in tabItems" :key="item.title">{{ item.title }}</v-tab>
               <v-tabs-items>
@@ -40,7 +50,7 @@
                   </v-card>
                 </v-tab-item>
               </v-tabs-items>
-            </v-tabs>
+            </v-tabs>-->
           </v-card>
         </v-flex>
         <v-flex d-flex>
@@ -93,6 +103,18 @@
 export default {
   data: () => ({
     cards: [],
+    schoolPicker: [],
+    school: [
+      "School of Pharmacy",
+      "School of Dental Medicine",
+      "School of Health and Rehabilitation Science",
+      "School of Medicine",
+      "School of Nursing",
+      "School of Public Health",
+      "School of Computing and Information",
+      "Swanson School of Engineering",
+      "School of Social Work"
+    ],
     items: [
       {
         active: true,
