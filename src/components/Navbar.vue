@@ -26,7 +26,7 @@
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="green darken-1" round dark @click="dialog = false">Cancel</v-btn>
-              <v-btn color="red darken-1" round dark @click="dialog = false">Sign out</v-btn>
+              <v-btn color="red darken-1" round dark href="/">Sign out</v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>
@@ -63,7 +63,7 @@ export default {
       menuItems: [
         {
           icon: "games",
-          title: "Start Quiz!",
+          title: "Quick Start!",
           link: "/Home"
         },
         { icon: "people", title: "Challenge", link: "/Challange" },
@@ -72,12 +72,19 @@ export default {
       list: [
         {
           icon: "games",
-          title: "Start Quiz!",
+          title: "Quick Start!",
           link: "/Home"
         },
         { icon: "people", title: "Challenge", link: "/Challenge" },
         { icon: "person", title: "Profile", link: "/Profile" },
         { icon: "exit_to_app", title: "Sign Out", link: "/Login" }
+      ],
+      signInList: [
+        {
+          icon: "",
+          title: "Sign In",
+          link: "/Home"
+        }
       ]
     };
   }
