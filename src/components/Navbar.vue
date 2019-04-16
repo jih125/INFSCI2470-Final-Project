@@ -77,7 +77,7 @@ export default {
         },
         { icon: "people", title: "Challenge", link: "/Challenge" },
         { icon: "person", title: "Profile", link: "/Profile" },
-        { icon: "exit_to_app", title: "Sign Out", link: "/Login" }
+        { icon: "exit_to_app", title: "Sign Out", link: "/" }
       ],
       signInList: [
         {

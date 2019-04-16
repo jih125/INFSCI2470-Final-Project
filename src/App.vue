@@ -2,8 +2,9 @@
   <!-- <div id="app"> -->
   <v-app id="inspire">
     <Navbar/>
+    <!-- <v-parallax height="700" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"> -->
     <v-content>
-      <v-container fill-height>
+      <v-container>
         <v-layout>
           <v-flex>
             <router-view></router-view>
@@ -11,6 +12,7 @@
         </v-layout>
       </v-container>
     </v-content>
+    <!-- </v-parallax> -->
     <v-footer dark auto>
       <v-card class="flex" flat tile>
         <v-card-title class="teal">
