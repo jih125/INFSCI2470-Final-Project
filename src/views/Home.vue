@@ -4,13 +4,6 @@
       <v-layout row wrap>
         <v-flex d-flex xl8 lg8 sm12 md8>
           <v-card>
-            <!-- <v-container fill-height fluid>
-              <v-layout fill-height>
-                <v-flex xl12 align-end flexbox>
-                  <span class="headline">Set up your quiz</span>
-                </v-flex>
-              </v-layout>
-            </v-container>-->
             <v-subheader>Set up your quiz</v-subheader>
             <v-select
               v-model="schoolPicker"
