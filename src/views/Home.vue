@@ -2,18 +2,41 @@
   <div class="dashboard">
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
-        <v-flex grow xl12 md6>
+        <v-flex xl12 lg8 sm12 md8>
           <v-card>
+            <!-- <v-container fill-height fluid>
+              <v-layout fill-height>
+                <v-flex xl12 align-end flexbox>
+                  <span class="headline">Set up your quiz</span>
+                </v-flex>
+              </v-layout>
+            </v-container>-->
+            <v-subheader>Set up your quiz</v-subheader>
             <v-select
               v-model="schoolPicker"
               :items="school"
-              :menu-props="{ maxHeight: '400' }"
-              label="Select"
+              :menu-props="{ maxHeight: '200' }"
+              label="Select your school"
               solo
-              hint="Select your school"
-              persistent-hint
             ></v-select>
-
+            <v-container fluid grid-list-xl>
+              <v-layout row wrap align-center justify-center>
+                <v-flex>
+                  <v-btn large color="primary" round dark>
+                    <span>Photography</span>
+                  </v-btn>
+                  <v-btn large color="primary" round dark>
+                    <span>Photography</span>
+                  </v-btn>
+                  <v-btn large color="primary" round dark>
+                    <span>Photography</span>
+                  </v-btn>
+                  <v-btn large color="primary" round dark>
+                    <span>Photography</span>
+                  </v-btn>
+                </v-flex>
+              </v-layout>
+            </v-container>
             <!-- <v-tabs centered show-arrows>
               <v-tabs-slider></v-tabs-slider>
               <v-tab v-for="item in tabItems" :key="item.title">{{ item.title }}</v-tab>
@@ -55,11 +78,10 @@
         </v-flex>
         <v-flex d-flex>
           <v-layout column wrap>
-            <v-flex d-flex xl6>
+            <v-flex d-flex xl4 lg6 sm8 md5>
               <v-card>
-                <v-card-text>Profile</v-card-text>
                 <v-list subheader>
-                  <v-subheader>Recent chat</v-subheader>
+                  <v-subheader>Profile</v-subheader>
                   <v-list-tile avatar v-for="item in items" :key="item.title" @click>
                     <v-list-tile-avatar>
                       <img :src="item.avatar">
@@ -74,10 +96,10 @@
                 </v-list>
               </v-card>
             </v-flex>
-            <v-flex d-flex xl6>
+            <v-flex d-flex xl4 lg6 sm8 md5>
               <v-card>
                 <v-list subheader>
-                  <v-subheader>Recent chat</v-subheader>
+                  <v-subheader>Leaderboard</v-subheader>
                   <v-list-tile avatar v-for="item in items" :key="item.title" @click>
                     <v-list-tile-avatar>
                       <img :src="item.avatar">

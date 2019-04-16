@@ -3,8 +3,8 @@
   <v-app id="inspire">
     <Navbar/>
     <v-content>
-      <v-container fluid fill-height>
-        <v-layout row wrap>
+      <v-container fill-height>
+        <v-layout>
           <v-flex>
             <router-view></router-view>
           </v-flex>
