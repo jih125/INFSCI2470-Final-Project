@@ -22,7 +22,7 @@
             <v-container fluid grid-list-xl>
               <v-layout row wrap align-center justify-center>
                 <v-flex>
-                  <v-dialog v-model="dialog" max-width="290">
+                  <v-dialog v-model="dialog" max-width="400">
                     <template v-slot:activator="{ on }">
                       <v-btn large color="primary" round dark v-on="on">
                         <span>Anatomy</span>
@@ -39,15 +39,17 @@
                     </template>
                     <v-card>
                       <v-container fluid>
-                        <v-layout column>
-                          <v-card-title class="headline">
-                            <p class="text-xl-center">Set Your Quiz</p>
-                          </v-card-title>
+                        <v-layout column align-center justify-center>
+                          <v-card-title class="headline">Set your Quiz</v-card-title>
                           <v-select :items="number" label="Number of Questions"></v-select>
                           <v-select :items="time" label="Time Limits per Questions"></v-select>
                           <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn color="indigo" large round dark href="/game">Start!</v-btn>
+                            <v-container fluid>
+                              <v-layout align-center justify-center>
+                                <v-btn color="indigo" large round dark href="/game">Start!</v-btn>
+                              </v-layout>
+                            </v-container>
                           </v-card-actions>
                         </v-layout>
                       </v-container>
@@ -105,74 +107,82 @@
 
 <script>
 export default {
-  data: () => ({
-    dialog: false,
-    cards: [],
-    schoolPicker: [],
-    school: [
-      "School of Pharmacy",
-      "School of Dental Medicine",
-      "School of Health and Rehabilitation Science",
-      "School of Medicine",
-      "School of Nursing",
-      "School of Public Health",
-      "School of Computing and Information",
-      "Swanson School of Engineering",
-      "School of Social Work"
-    ],
-    items: [
-      {
-        active: true,
-        title: "Danlan Huang",
-        avatar: "https://randomuser.me/api/portraits/men/85.jpg"
-      },
-      {
-        active: true,
-        title: "Andrew Mrkva",
-        avatar: "https://randomuser.me/api/portraits/men/85.jpg"
-      },
-      {
-        title: "Patrick Hu",
-        avatar: "https://randomuser.me/api/portraits/men/85.jpg"
-      },
-      {
-        title: "Jane Doe",
-        avatar: "https://randomuser.me/api/portraits/men/85.jpg"
-      }
-    ],
-    tabItems: [
-      {
-        title: "School of Pharmacy"
-      },
-      {
-        title: "School of Dental Medicine"
-      },
-      {
-        title: "School of Computing and Information"
-      },
-      {
-        title: "School of Health and Rehabilitation Science"
-      },
-      {
-        title: "School of Medicine"
-      },
-      {
-        title: "School of Nursing"
-      },
-      {
-        title: "Swanson School of Engineering"
-      },
-      {
-        title: "School of Public Health"
-      },
-      {
-        title: "School of Social Work"
-      }
-    ],
-    number: ["1", "5", "10", "15", "All"],
-    time: ["Unlimited", "5", "10", "15", "30", "60"],
-    text:
-      "Lorem ipsum dolor nt ut labore et dolore magna aliqua. U quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  })
+  data() {
+    return {
+      dialog: false,
+      cards: [],
+      schoolPicker: [],
+      school: [
+        "School of Pharmacy",
+        "School of Dental Medicine",
+        "School of Health and Rehabilitation Science",
+        "School of Medicine",
+        "School of Nursing",
+        "School of Public Health",
+        "School of Computing and Information",
+        "Swanson School of Engineering",
+        "School of Social Work"
+      ],
+      items: [
+        {
+          active: true,
+          title: "Danlan Huang",
+          avatar: "https://randomuser.me/api/portraits/men/85.jpg"
+        },
+        {
+          active: true,
+          title: "Andrew Mrkva",
+          avatar: "https://randomuser.me/api/portraits/men/85.jpg"
+        },
+        {
+          title: "Patrick Hu",
+          avatar: "https://randomuser.me/api/portraits/men/85.jpg"
+        },
+        {
+          title: "Jane Doe",
+          avatar: "https://randomuser.me/api/portraits/men/85.jpg"
+        }
+      ],
+      tabItems: [
+        {
+          title: "School of Pharmacy"
+        },
+        {
+          title: "School of Dental Medicine"
+        },
+        {
+          title: "School of Computing and Information"
+        },
+        {
+          title: "School of Health and Rehabilitation Science"
+        },
+        {
+          title: "School of Medicine"
+        },
+        {
+          title: "School of Nursing"
+        },
+        {
+          title: "Swanson School of Engineering"
+        },
+        {
+          title: "School of Public Health"
+        },
+        {
+          title: "School of Social Work"
+        }
+      ],
+      number: ["1", "5", "10", "15", "All"],
+      time: ["Unlimited", "5", "10", "15", "30", "60"],
+      topicItems: [
+        { title: "Anatomy" },
+        { title: "Self Care" },
+        { title: "Physiology" },
+        { title: "BioChemestry" }
+      ],
+      text:
+        "Lorem ipsum dolor nt ut labore et dolore magna aliqua. U quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    };
+  }
 };
 </script>
