@@ -2,7 +2,7 @@
   <div class="dashboard">
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
-        <v-flex xl12 lg8 sm12 md8>
+        <v-flex xl8 lg8 sm12 md8>
           <v-card>
             <!-- <v-container fill-height fluid>
               <v-layout fill-height>
