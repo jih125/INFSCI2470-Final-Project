@@ -2,7 +2,7 @@
   <div class="dashboard">
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
-        <v-flex xl8 lg8 sm12 md8>
+        <v-flex d-flex xl8 lg8 sm12 md8>
           <v-card>
             <!-- <v-container fill-height fluid>
               <v-layout fill-height>
@@ -22,58 +22,40 @@
             <v-container fluid grid-list-xl>
               <v-layout row wrap align-center justify-center>
                 <v-flex>
-                  <v-btn large color="primary" round dark>
-                    <span>Photography</span>
-                  </v-btn>
-                  <v-btn large color="primary" round dark>
-                    <span>Photography</span>
-                  </v-btn>
-                  <v-btn large color="primary" round dark>
-                    <span>Photography</span>
-                  </v-btn>
-                  <v-btn large color="primary" round dark>
-                    <span>Photography</span>
-                  </v-btn>
+                  <v-dialog v-model="dialog" max-width="290">
+                    <template v-slot:activator="{ on }">
+                      <v-btn large color="primary" round dark v-on="on">
+                        <span>Anatomy</span>
+                      </v-btn>
+                      <v-btn large color="primary" round dark v-on="on">
+                        <span>Physiology</span>
+                      </v-btn>
+                      <v-btn large color="primary" round dark v-on="on">
+                        <span>BioChemistry</span>
+                      </v-btn>
+                      <v-btn large color="primary" round dark v-on="on">
+                        <span>Self-Care</span>
+                      </v-btn>
+                    </template>
+                    <v-card>
+                      <v-container fluid>
+                        <v-layout column>
+                          <v-card-title class="headline">
+                            <p class="text-xl-center">Set Your Quiz</p>
+                          </v-card-title>
+                          <v-select :items="number" label="Number of Questions"></v-select>
+                          <v-select :items="time" label="Time Limits per Questions"></v-select>
+                          <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn color="indigo" large round dark href="/game">Start!</v-btn>
+                          </v-card-actions>
+                        </v-layout>
+                      </v-container>
+                    </v-card>
+                  </v-dialog>
                 </v-flex>
               </v-layout>
             </v-container>
-            <!-- <v-tabs centered show-arrows>
-              <v-tabs-slider></v-tabs-slider>
-              <v-tab v-for="item in tabItems" :key="item.title">{{ item.title }}</v-tab>
-              <v-tabs-items>
-                <v-tab-item v-for="i in 9" :key="i">
-                  <v-card>
-                    <v-container fluid grid-list-xl>
-                      <v-layout row wrap align-center justify-center>
-                        <v-flex>
-                          <v-btn color="primary" round dark>
-                            <span>Photography</span>
-                          </v-btn>
-                          <v-btn color="primary" round dark>
-                            <span>Photography</span>
-                          </v-btn>
-                          <v-btn color="primary" round dark>
-                            <span>Photography</span>
-                          </v-btn>
-                          <v-btn color="primary" round dark>
-                            <span>Photography</span>
-                          </v-btn>
-                          <v-btn color="primary" round dark>
-                            <span>Photography</span>
-                          </v-btn>
-                          <v-btn color="primary" round dark>
-                            <span>Photography</span>
-                          </v-btn>
-                          <v-btn color="primary" round dark>
-                            <span>Photography</span>
-                          </v-btn>
-                        </v-flex>
-                      </v-layout>
-                    </v-container>
-                  </v-card>
-                </v-tab-item>
-              </v-tabs-items>
-            </v-tabs>-->
           </v-card>
         </v-flex>
         <v-flex d-flex>
@@ -124,6 +106,7 @@
 <script>
 export default {
   data: () => ({
+    dialog: false,
     cards: [],
     schoolPicker: [],
     school: [
@@ -186,6 +169,8 @@ export default {
         title: "School of Social Work"
       }
     ],
+    number: ["1", "5", "10", "15", "All"],
+    time: ["Unlimited", "5", "10", "15", "30", "60"],
     text:
       "Lorem ipsum dolor nt ut labore et dolore magna aliqua. U quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   })
