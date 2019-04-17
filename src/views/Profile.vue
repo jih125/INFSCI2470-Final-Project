@@ -50,7 +50,7 @@
             <v-card-title>
               <h1>My Performance</h1>
             </v-card-title>
-            <v-flex xs12 offset-xl9>
+            <v-flex xs12 offset-xl9 offset-xs6 offset-sm8>
               <v-btn-toggle v-model="text">
                 <v-btn value="Today">Today</v-btn>
                 <v-btn value="Overall">Overall</v-btn>

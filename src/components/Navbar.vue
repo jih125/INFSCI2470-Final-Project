@@ -76,7 +76,7 @@ export default {
           title: "Home",
           link: "/Home"
         },
-        { icon: "people", title: "Challenge", link: "/Challenge" },
+        { icon: "people", title: "Challenge", link: "/Challange" },
         { icon: "person", title: "Profile", link: "/Profile" },
         { icon: "exit_to_app", title: "Sign Out", link: "/" }
       ],

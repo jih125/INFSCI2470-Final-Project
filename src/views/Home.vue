@@ -2,7 +2,7 @@
   <div class="dashboard">
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
-        <v-flex d-flex xl8 lg8 sm12 md8>
+        <v-flex d-flex xl6 lg7 sm12 md5 offset-xl1>
           <v-card>
             <v-subheader>Set up your quiz</v-subheader>
             <v-select
@@ -12,68 +12,121 @@
               label="Select your school"
               solo
             ></v-select>
-            <v-container fluid grid-list-xl>
-              <v-layout row wrap align-center justify-center>
-                <v-flex>
-                  <v-dialog v-model="dialog" max-width="400">
-                    <template v-slot:activator="{ on }">
-                      <v-btn large color="primary" round dark v-on="on">
-                        <span>Anatomy</span>
-                      </v-btn>
-                      <v-btn large color="primary" round dark v-on="on">
-                        <span>Physiology</span>
-                      </v-btn>
-                      <v-btn large color="primary" round dark v-on="on">
-                        <span>BioChemistry</span>
-                      </v-btn>
-                      <v-btn large color="primary" round dark v-on="on">
-                        <span>Self-Care</span>
-                      </v-btn>
-                    </template>
-                    <v-card>
-                      <v-container fluid>
-                        <v-layout column align-center justify-center>
-                          <v-card-title class="headline">Set your Quiz</v-card-title>
-                          <v-select :items="number" label="Number of Questions"></v-select>
-                          <v-select :items="time" label="Time Limits per Questions"></v-select>
-                          <v-card-actions>
-                            <v-spacer></v-spacer>
-                            <v-container fluid>
-                              <v-layout align-center justify-center>
-                                <v-btn color="indigo" large round dark href="/game">Start!</v-btn>
-                              </v-layout>
-                            </v-container>
-                          </v-card-actions>
-                        </v-layout>
-                      </v-container>
-                    </v-card>
-                  </v-dialog>
-                </v-flex>
-              </v-layout>
-            </v-container>
+            <v-subheader>Choose your topic</v-subheader>
+            <v-layout row wrap align-center justify-center>
+              <v-flex>
+                <v-dialog v-model="dialog" max-width="400">
+                  <template v-slot:activator="{ on }">
+                    <v-btn large color="primary" round dark v-on="on">
+                      <span>Anatomy</span>
+                    </v-btn>
+                    <v-btn large color="primary" round dark v-on="on">
+                      <span>Physiology</span>
+                    </v-btn>
+                    <v-btn large color="primary" round dark v-on="on">
+                      <span>BioChemistry</span>
+                    </v-btn>
+                    <v-btn large color="primary" round dark v-on="on">
+                      <span>Self-Care</span>
+                    </v-btn>
+                  </template>
+                  <v-card>
+                    <v-container fluid>
+                      <v-layout column align-center justify-center>
+                        <v-card-title class="headline">Set your Quiz</v-card-title>
+                        <v-select :items="number" label="Number of Questions"></v-select>
+                        <v-select :items="time" label="Time Limits per Questions"></v-select>
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-container fluid>
+                            <v-layout align-center justify-center>
+                              <v-btn color="indigo" large round dark href="/game">Start!</v-btn>
+                            </v-layout>
+                          </v-container>
+                        </v-card-actions>
+                      </v-layout>
+                    </v-container>
+                  </v-card>
+                </v-dialog>
+              </v-flex>
+            </v-layout>
           </v-card>
         </v-flex>
-        <v-flex d-flex>
-          <v-layout column wrap>
-            <v-flex d-flex xl4 lg6 sm8 md5>
+        <v-flex d-flex xl4 lg5 md7>
+          <v-layout column>
+            <v-flex xl3 lg md4 sm6 offset-md0 offset-xl0>
               <v-card>
-                <v-list subheader>
-                  <v-subheader>Profile</v-subheader>
-                  <v-list-tile avatar v-for="item in items" :key="item.title" @click>
-                    <v-list-tile-avatar>
-                      <img :src="item.avatar">
-                    </v-list-tile-avatar>
-                    <v-list-tile-content>
-                      <v-list-tile-title v-html="item.title"></v-list-tile-title>
-                    </v-list-tile-content>
-                    <v-list-tile-action>
-                      <v-icon :color="item.active ? 'teal' : 'grey'">chat_bubble</v-icon>
-                    </v-list-tile-action>
-                  </v-list-tile>
-                </v-list>
+                <v-img
+                  height="240px"
+                  class="white--text"
+                  src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                >
+                  <v-container fill-height fluid>
+                    <v-layout column align-center justify-center>
+                      <v-flex>
+                        <v-avatar size="80px">
+                          <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Avatar">
+                        </v-avatar>
+                        <v-card-title primary-title>
+                          <div>
+                            <div class="headline">Danlan Huang</div>
+                            <div>School of Computing and Science</div>
+                            <div>Beginner</div>
+                          </div>
+                        </v-card-title>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+                </v-img>
+                <v-container fill-height fluid>
+                  <v-layout row align-center>
+                    <v-flex xl4>
+                      <v-card hover>
+                        <v-container fill-height fluid>
+                          <v-layout column align-center>
+                            <v-card-title primary-title>
+                              <div>
+                                <div>Score</div>
+                                <div class="headline">1500</div>
+                              </div>
+                            </v-card-title>
+                          </v-layout>
+                        </v-container>
+                      </v-card>
+                    </v-flex>
+                    <v-flex xl4>
+                      <v-card hover>
+                        <v-container fill-height fluid>
+                          <v-layout column align-center>
+                            <v-card-title primary-title>
+                              <div>
+                                <div>Studied</div>
+                                <div class="headline">6</div>
+                              </div>
+                            </v-card-title>
+                          </v-layout>
+                        </v-container>
+                      </v-card>
+                    </v-flex>
+                    <v-flex xl4>
+                      <v-card hover>
+                        <v-container fill-height fluid>
+                          <v-layout column align-center>
+                            <v-card-title primary-title>
+                              <div>
+                                <div>Friends</div>
+                                <div class="headline">5</div>
+                              </div>
+                            </v-card-title>
+                          </v-layout>
+                        </v-container>
+                      </v-card>
+                    </v-flex>
+                  </v-layout>
+                </v-container>
               </v-card>
             </v-flex>
-            <v-flex d-flex xl4 lg6 sm8 md5>
+            <v-flex xl4 lg6 sm8 md5>
               <v-card>
                 <v-list subheader>
                   <v-subheader>Leaderboard</v-subheader>
