@@ -16,6 +16,8 @@
                       <br>
                       <b>Student ID:</b> dah189
                       <br>
+                      <b>Email:</b> dah189@pitt.edu
+                      <br>
                       <b>Year:</b> 1
                       <sup>st</sup>
                       <br>
