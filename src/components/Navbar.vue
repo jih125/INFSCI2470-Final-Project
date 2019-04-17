@@ -19,14 +19,15 @@
             </v-btn>
           </template>
           <v-card>
-            <v-card-title class="headline">Sign out</v-card-title>
+            <v-card-title class="headline">
+              <h4>Sign out</h4>
+            </v-card-title>
             <v-card-text>
-              <span>Are you sure you want to sign out?</span>
+              <p>Are you sure you want to sign out?</p>
             </v-card-text>
             <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn color="green darken-1" round dark @click="dialog = false">Cancel</v-btn>
-              <v-btn color="red darken-1" round dark href="/">Sign out</v-btn>
+              <v-btn color="green darken-1" block round dark @click="dialog = false">Cancel</v-btn>
+              <v-btn color="red darken-1" block round dark href="/">Sign out</v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>
@@ -62,8 +63,8 @@ export default {
       dialog: false,
       menuItems: [
         {
-          icon: "games",
-          title: "Quick Start!",
+          icon: "home",
+          title: "Home",
           link: "/Home"
         },
         { icon: "people", title: "Challenge", link: "/Challange" },
@@ -71,8 +72,8 @@ export default {
       ],
       list: [
         {
-          icon: "games",
-          title: "Quick Start!",
+          icon: "home",
+          title: "Home",
           link: "/Home"
         },
         { icon: "people", title: "Challenge", link: "/Challenge" },

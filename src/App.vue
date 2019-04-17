@@ -4,7 +4,7 @@
     <Navbar/>
     <!-- <v-parallax height="700" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"> -->
     <v-content>
-      <v-container>
+      <v-container fill-height>
         <v-layout>
           <v-flex>
             <router-view></router-view>
