@@ -17,7 +17,7 @@
             </v-card-title>
             <v-data-table :headers="headers" :items="desserts" :search="search">
               <template v-slot:items="props">
-                <td>{{ props.item.name }}</td>
+                <td class="text-xs-left">{{ props.item.name }}</td>
                 <td class="text-xs-right">{{ props.item.calories }}</td>
                 <td class="text-xs-right">{{ props.item.fat }}</td>
                 <td class="text-xs-right">{{ props.item.carbs }}</td>
@@ -145,7 +145,7 @@ export default {
       search: "",
       headers: [
         {
-          text: "Dessert (100g serving)",
+          text: "Name",
           align: "left",
           sortable: false,
           value: "name"
@@ -158,7 +158,7 @@ export default {
       ],
       desserts: [
         {
-          name: "Frozen Yogurt",
+          name: "Danlan Huang",
           calories: 159,
           fat: 6.0,
           carbs: 24,
@@ -166,7 +166,7 @@ export default {
           iron: "1%"
         },
         {
-          name: "Ice cream sandwich",
+          name: "Andrew Mrkva",
           calories: 237,
           fat: 9.0,
           carbs: 37,
@@ -174,7 +174,7 @@ export default {
           iron: "1%"
         },
         {
-          name: "Eclair",
+          name: "Patrick Hu",
           calories: 262,
           fat: 16.0,
           carbs: 23,
@@ -182,7 +182,7 @@ export default {
           iron: "7%"
         },
         {
-          name: "Cupcake",
+          name: "Jane Doe",
           calories: 305,
           fat: 3.7,
           carbs: 67,
@@ -190,7 +190,7 @@ export default {
           iron: "8%"
         },
         {
-          name: "Gingerbread",
+          name: "Andy Samberg",
           calories: 356,
           fat: 16.0,
           carbs: 49,
@@ -198,7 +198,7 @@ export default {
           iron: "16%"
         },
         {
-          name: "Jelly bean",
+          name: "Bruce Wayne",
           calories: 375,
           fat: 0.0,
           carbs: 94,
@@ -206,7 +206,7 @@ export default {
           iron: "0%"
         },
         {
-          name: "Lollipop",
+          name: "Jimmy Fallon",
           calories: 392,
           fat: 0.2,
           carbs: 98,
@@ -214,7 +214,7 @@ export default {
           iron: "2%"
         },
         {
-          name: "Honeycomb",
+          name: "Kitty Perry",
           calories: 408,
           fat: 3.2,
           carbs: 87,
@@ -222,7 +222,7 @@ export default {
           iron: "45%"
         },
         {
-          name: "Donut",
+          name: "Lois Lane",
           calories: 452,
           fat: 25.0,
           carbs: 51,
@@ -230,7 +230,7 @@ export default {
           iron: "22%"
         },
         {
-          name: "KitKat",
+          name: "Miley Cyrus",
           calories: 518,
           fat: 26.0,
           carbs: 65,
