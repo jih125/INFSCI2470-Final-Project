@@ -2,7 +2,7 @@
   <div class="dashboard">
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
-        <v-flex d-flex xl6 lg7 sm12 md5 offset-xl1>
+        <v-flex d-flex xl7 lg7 sm12 md5 offset-xl1>
           <v-card>
             <v-subheader>Set up your quiz</v-subheader>
             <v-select
@@ -52,74 +52,47 @@
             </v-layout>
           </v-card>
         </v-flex>
-        <v-flex d-flex xl4 lg5 md7>
+        <v-flex d-flex xl3 lg5 md7>
           <v-layout column>
             <v-flex xl3 lg md4 sm6 offset-md0 offset-xl0>
               <v-card>
                 <v-img
-                  height="240px"
+                  height="200px"
                   class="white--text"
                   src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
                 >
                   <v-container fill-height fluid>
-                    <v-layout column align-center justify-center>
+                    <v-layout row align-center justify-center>
                       <v-flex>
-                        <v-avatar size="80px">
+                        <v-avatar size="100px">
                           <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Avatar">
                         </v-avatar>
-                        <v-card-title primary-title>
-                          <div>
-                            <div class="headline">Danlan Huang</div>
-                            <div>School of Computing and Science</div>
-                            <div>Beginner</div>
-                          </div>
-                        </v-card-title>
                       </v-flex>
+                      <v-card-title>
+                        <div>
+                          <div class="headline">Danlan Huang</div>
+                          <div>School of Computing and Science</div>
+                          <div>Beginner</div>
+                        </div>
+                      </v-card-title>
                     </v-layout>
                   </v-container>
                 </v-img>
                 <v-container fill-height fluid>
-                  <v-layout row align-center>
+                  <v-layout align-center justify-center>
                     <v-flex xl4>
-                      <v-card hover>
-                        <v-container fill-height fluid>
-                          <v-layout column align-center>
-                            <v-card-title primary-title>
-                              <div>
-                                <div>Score</div>
-                                <div class="headline">1500</div>
-                              </div>
-                            </v-card-title>
-                          </v-layout>
-                        </v-container>
-                      </v-card>
-                    </v-flex>
-                    <v-flex xl4>
-                      <v-card hover>
-                        <v-container fill-height fluid>
-                          <v-layout column align-center>
-                            <v-card-title primary-title>
-                              <div>
-                                <div>Studied</div>
-                                <div class="headline">6</div>
-                              </div>
-                            </v-card-title>
-                          </v-layout>
-                        </v-container>
-                      </v-card>
-                    </v-flex>
-                    <v-flex xl4>
-                      <v-card hover>
-                        <v-container fill-height fluid>
-                          <v-layout column align-center>
-                            <v-card-title primary-title>
-                              <div>
-                                <div>Friends</div>
-                                <div class="headline">5</div>
-                              </div>
-                            </v-card-title>
-                          </v-layout>
-                        </v-container>
+                      <v-card flat>
+                        <v-progress-circular
+                          :rotate="-90"
+                          size="150"
+                          width="15"
+                          value="value"
+                          color="primary"
+                        >
+                          <p align="center">
+                            <br>Your score: 1500
+                          </p>
+                        </v-progress-circular>
                       </v-card>
                     </v-flex>
                   </v-layout>

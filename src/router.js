@@ -5,7 +5,7 @@ import Challange from "./views/Challange";
 import Signin from "./views/User/Signin";
 import Signup from "./views/User/Signup";
 import Profile from "./views/Profile";
-import Game from "./views/Quizgame/Game";
+import game from "./views/Quizgame/game";
 
 Vue.use(Router);
 
@@ -46,7 +46,7 @@ export default new Router({
     {
       path: "/game",
       name: "Game",
-      component: Game
+      component: game
     }
   ]
 });
