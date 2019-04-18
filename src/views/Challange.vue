@@ -2,7 +2,18 @@
   <div class="challenge">
     <v-container grid-list-xl text-xs-center>
       <v-layout row wrap>
-        <v-flex lg6 sm8 offset-lg1 offset-sm2 order-sm2 order-xs2>
+        <v-flex
+          lg6
+          sm8
+          md7
+          offset-lg1
+          offset-sm2
+          offset-md0
+          order-sm2
+          order-xs2
+          order-lg1
+          order-xl1
+        >
           <v-card>
             <v-list three-line>
               <template v-for="(item, index) in items">
@@ -24,7 +35,19 @@
             </v-list>
           </v-card>
         </v-flex>
-        <v-flex xl3 lg4 md5 sm8 offset-sm2 order-sm1 order-xs1>
+        <v-flex
+          xl3
+          lg4
+          md5
+          sm8
+          offset-sm2
+          order-md2
+          offset-md0
+          order-sm1
+          order-xs1
+          order-lg2
+          order-xl2
+        >
           <v-card>
             <v-img
               height="240px"
