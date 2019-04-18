@@ -57,9 +57,9 @@
             <v-flex xl3 lg md4 sm6 offset-md0 offset-xl0>
               <v-card>
                 <v-img
-                  height="200px"
+                  height="180px"
                   class="white--text"
-                  src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                  src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
                 >
                   <v-container fill-height fluid>
                     <v-layout row align-center justify-center>
