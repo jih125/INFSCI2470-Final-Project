@@ -2,7 +2,7 @@
   <div class="dashboard">
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
-        <v-flex d-flex xl7 lg7 sm12 md5 offset-xl1>
+        <v-flex d-flex xl7 lg8 sm12 md5 offset-xl1>
           <v-card>
             <v-subheader>Set up your quiz</v-subheader>
             <v-select
@@ -52,7 +52,7 @@
             </v-layout>
           </v-card>
         </v-flex>
-        <v-flex d-flex xl3 lg5 md7>
+        <v-flex d-flex xl3 lg4 md7>
           <v-layout column>
             <v-flex xl3 lg md4 sm6 offset-md0 offset-xl0>
               <v-card>
@@ -80,7 +80,7 @@
                 </v-img>
                 <v-container fill-height fluid>
                   <v-layout align-center justify-center>
-                    <v-flex xl4>
+                    <v-flex xl4 offset-lg3>
                       <v-card flat>
                         <v-progress-circular
                           :rotate="-90"
