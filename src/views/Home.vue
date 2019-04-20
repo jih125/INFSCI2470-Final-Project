@@ -2,7 +2,7 @@
   <div class="dashboard">
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
-        <v-flex d-flex xl7 lg8 sm12 md5 offset-xl1>
+        <v-flex d-flex xl6 lg7 sm12 md7 offset-xl0>
           <v-card>
             <v-subheader>Set up your quiz</v-subheader>
             <v-select
@@ -13,46 +13,48 @@
               solo
             ></v-select>
             <v-subheader>Choose your topic</v-subheader>
-            <v-layout row wrap align-center justify-center>
-              <v-flex>
-                <v-dialog v-model="dialog" max-width="400">
-                  <template v-slot:activator="{ on }">
-                    <v-btn large color="primary" round dark v-on="on">
-                      <span>Anatomy</span>
-                    </v-btn>
-                    <v-btn large color="primary" round dark v-on="on">
-                      <span>Physiology</span>
-                    </v-btn>
-                    <v-btn large color="primary" round dark v-on="on">
-                      <span>BioChemistry</span>
-                    </v-btn>
-                    <v-btn large color="primary" round dark v-on="on">
-                      <span>Self-Care</span>
-                    </v-btn>
-                  </template>
-                  <v-card>
-                    <v-container fluid>
-                      <v-layout column align-center justify-center>
-                        <v-card-title class="headline">Set your Quiz</v-card-title>
-                        <v-select :items="number" label="Number of Questions"></v-select>
-                        <v-select :items="time" label="Time Limits per Questions"></v-select>
-                        <v-card-actions>
-                          <v-spacer></v-spacer>
-                          <v-container fluid>
-                            <v-layout align-center justify-center>
-                              <v-btn color="indigo" large round dark href="/game">Start!</v-btn>
-                            </v-layout>
-                          </v-container>
-                        </v-card-actions>
-                      </v-layout>
-                    </v-container>
-                  </v-card>
-                </v-dialog>
-              </v-flex>
+            <v-layout column align-center justify-center>
+              <v-layout row wrap align-start>
+                <v-item-group multiple>
+                  <v-item v-for="item in topicItems" :key="item.title">
+                    <v-chip
+                      slot-scope="{active, toggle}"
+                      :selected="active"
+                      @click="toggle"
+                      color="green"
+                      dark
+                    >{{item.title}}</v-chip>
+                  </v-item>
+                </v-item-group>
+              </v-layout>
+              <v-dialog v-model="dialog" max-width="400">
+                <template v-slot:activator="{ on }">
+                  <v-btn color="primary" dark v-on="on">
+                    <span>Submit</span>
+                  </v-btn>
+                </template>
+                <v-card>
+                  <v-container fluid>
+                    <v-layout column align-center justify-center>
+                      <v-card-title class="headline">Set your Quiz</v-card-title>
+                      <v-select :items="number" label="Number of Questions"></v-select>
+                      <v-select :items="time" label="Time Limits per Questions"></v-select>
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-container fluid>
+                          <v-layout align-center justify-center>
+                            <v-btn color="indigo" large round dark href="/game">Start!</v-btn>
+                          </v-layout>
+                        </v-container>
+                      </v-card-actions>
+                    </v-layout>
+                  </v-container>
+                </v-card>
+              </v-dialog>
             </v-layout>
           </v-card>
         </v-flex>
-        <v-flex d-flex xl3 lg4 md7>
+        <v-flex d-flex xl4 lg5 md5>
           <v-layout column>
             <v-flex xl3 lg md4 sm6 offset-md0 offset-xl0>
               <v-card>
@@ -78,25 +80,24 @@
                     </v-layout>
                   </v-container>
                 </v-img>
-                <v-container fill-height fluid>
-                  <v-layout align-center justify-center>
-                    <v-flex xl4 offset-lg3>
-                      <v-card flat>
-                        <v-progress-circular
-                          :rotate="-90"
-                          size="150"
-                          width="15"
-                          value="value"
-                          color="primary"
-                        >
-                          <p align="center">
-                            <br>Your score: 1500
-                          </p>
-                        </v-progress-circular>
-                      </v-card>
-                    </v-flex>
-                  </v-layout>
-                </v-container>
+                <v-subheader>Your current topic score:</v-subheader>
+                <v-layout column align-center justify-center>
+                  <v-flex xl4>
+                    <v-card flat>
+                      <v-progress-circular
+                        :rotate="-90"
+                        size="150"
+                        width="15"
+                        value="value"
+                        color="primary"
+                      >
+                        <p align="center">
+                          <br>Your score: 1500
+                        </p>
+                      </v-progress-circular>
+                    </v-card>
+                  </v-flex>
+                </v-layout>
               </v-card>
             </v-flex>
             <v-flex xl4 lg6 sm8 md5>
@@ -201,10 +202,10 @@ export default {
       number: ["1", "5", "10", "15", "All"],
       time: ["Unlimited", "5", "10", "15", "30", "60"],
       topicItems: [
-        { title: "Anatomy" },
-        { title: "Self Care" },
-        { title: "Physiology" },
-        { title: "BioChemestry" }
+        { number: "1", title: "Anatomy" },
+        { number: "2", title: "Self Care" },
+        { number: "3", title: "Physiology" },
+        { number: "4", title: "BioChemestry" }
       ],
       text:
         "Lorem ipsum dolor nt ut labore et dolore magna aliqua. U quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."

@@ -17,7 +17,6 @@
             </v-card-text>
           </v-card>
         </v-flex>
-        <!-- <v-flex> -->
         <v-flex d-flex sm5 xl3 md5 lg4>
           <v-card>
             <v-form v-model="valid">
@@ -30,8 +29,6 @@
                     outline
                     required
                   ></v-text-field>
-                </v-flex>
-                <v-flex lg10 offset-lg1>
                   <v-text-field
                     v-model="password"
                     :rules="passwordRules"
@@ -43,12 +40,12 @@
                 <v-card-text class="text-xs-right">Forgot Password?</v-card-text>
                 <v-flex>
                   <v-btn dark block color="green" href="/Home">Sign in</v-btn>
+                  <v-btn dark block color="red" href="/Signup">Sign up</v-btn>
                 </v-flex>
               </v-container>
             </v-form>
           </v-card>
         </v-flex>
-        <!-- </v-flex> -->
       </v-layout>
     </v-container>
   </div>
