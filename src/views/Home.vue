@@ -140,18 +140,6 @@ export default {
     return {
       dialog: false,
       cards: [],
-      schoolPicker: [],
-      school: [
-        "School of Pharmacy",
-        "School of Dental Medicine",
-        "School of Health and Rehabilitation Science",
-        "School of Medicine",
-        "School of Nursing",
-        "School of Public Health",
-        "School of Computing and Information",
-        "Swanson School of Engineering",
-        "School of Social Work"
-      ],
       items: [
         {
           active: true,

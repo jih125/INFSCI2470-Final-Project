@@ -15,22 +15,24 @@
                 hide-details
               ></v-text-field>
             </v-card-title>
-            <v-data-table :headers="headers" :items="desserts" :search="search">
-              <template v-slot:items="props">
-                <td class="text-xs-left">{{ props.item.name }}</td>
-                <td class="text-xs-right hidden-xs-only">{{ props.item.Anatomy }}</td>
-                <td class="text-xs-right hidden-xs-only">{{ props.item.Physiology }}</td>
-                <td class="text-xs-right hidden-xs-only">{{ props.item.BioChemistry }}</td>
-                <td class="text-xs-right hidden-xs-only">{{ props.item.Selfcare }}</td>
-                <td class="text-xs-right">{{ props.item.Total }}</td>
-              </template>
-              <v-alert
-                v-slot:no-results
-                :value="true"
-                color="error"
-                icon="warning"
-              >Your search for "{{ search }}" found no results.</v-alert>
-            </v-data-table>
+            <v-flex>
+              <v-data-table :headers="headers" :items="desserts" :search="search">
+                <template v-slot:items="props">
+                  <td class="text-xs-left">{{ props.item.name }}</td>
+                  <td class="text-xs-right hidden-xs-only">{{ props.item.Anatomy }}</td>
+                  <td class="text-xs-right hidden-xs-only">{{ props.item.Physiology }}</td>
+                  <td class="text-xs-right hidden-xs-only">{{ props.item.BioChemistry }}</td>
+                  <td class="text-xs-right hidden-xs-only">{{ props.item.Selfcare }}</td>
+                  <td class="text-xs-right">{{ props.item.Total }}</td>
+                </template>
+                <v-alert
+                  v-slot:no-results
+                  :value="true"
+                  color="error"
+                  icon="warning"
+                >Your search for "{{ search }}" found no results.</v-alert>
+              </v-data-table>
+            </v-flex>
           </v-card>
         </v-flex>
         <v-flex
