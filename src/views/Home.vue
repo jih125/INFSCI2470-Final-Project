@@ -5,52 +5,58 @@
         <v-flex d-flex xl6 lg7 sm12 md7 offset-xl0>
           <v-card>
             <v-subheader>Set up your quiz</v-subheader>
-            <v-select
-              v-model="schoolPicker"
-              :items="school"
-              :menu-props="{ maxHeight: '200' }"
-              label="Select your school"
-              solo
-            ></v-select>
+            <v-flex>
+              <v-select
+                v-model="schoolPicker"
+                :items="school"
+                :menu-props="{ maxHeight: '200' }"
+                label="Select your school"
+                solo
+              ></v-select>
+            </v-flex>
             <v-subheader>Choose your topic</v-subheader>
             <v-layout column align-center justify-center>
-              <v-layout row wrap align-start>
-                <v-item-group multiple>
-                  <v-item v-for="item in topicItems" :key="item.title">
-                    <v-chip
-                      slot-scope="{active, toggle}"
-                      :selected="active"
-                      @click="toggle"
-                      color="green"
-                      dark
-                    >{{item.title}}</v-chip>
-                  </v-item>
-                </v-item-group>
-              </v-layout>
-              <v-dialog v-model="dialog" max-width="400">
-                <template v-slot:activator="{ on }">
-                  <v-btn color="primary" dark v-on="on">
-                    <span>Submit</span>
-                  </v-btn>
-                </template>
-                <v-card>
-                  <v-container fluid>
-                    <v-layout column align-center justify-center>
-                      <v-card-title class="headline">Set your Quiz</v-card-title>
-                      <v-select :items="number" label="Number of Questions"></v-select>
-                      <v-select :items="time" label="Time Limits per Questions"></v-select>
-                      <v-card-actions>
-                        <v-spacer></v-spacer>
-                        <v-container fluid>
-                          <v-layout align-center justify-center>
-                            <v-btn color="indigo" large round dark href="/game">Start!</v-btn>
-                          </v-layout>
-                        </v-container>
-                      </v-card-actions>
-                    </v-layout>
-                  </v-container>
-                </v-card>
-              </v-dialog>
+              <v-flex>
+                <v-layout row wrap align-start>
+                  <v-item-group multiple>
+                    <v-item v-for="item in topicItems" :key="item.title">
+                      <v-chip
+                        slot-scope="{active, toggle}"
+                        :selected="active"
+                        @click="toggle"
+                        color="green"
+                        dark
+                      >{{item.title}}</v-chip>
+                    </v-item>
+                  </v-item-group>
+                </v-layout>
+              </v-flex>
+              <v-flex>
+                <v-dialog v-model="dialog" max-width="400">
+                  <template v-slot:activator="{ on }">
+                    <v-btn color="primary" dark v-on="on">
+                      <span>Submit</span>
+                    </v-btn>
+                  </template>
+                  <v-card>
+                    <v-container fluid>
+                      <v-layout column align-center justify-center>
+                        <v-card-title class="headline">Set your Quiz</v-card-title>
+                        <v-select :items="number" label="Number of Questions"></v-select>
+                        <v-select :items="time" label="Time Limits per Questions"></v-select>
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-container fluid>
+                            <v-layout align-center justify-center>
+                              <v-btn color="indigo" large round dark href="/game">Start!</v-btn>
+                            </v-layout>
+                          </v-container>
+                        </v-card-actions>
+                      </v-layout>
+                    </v-container>
+                  </v-card>
+                </v-dialog>
+              </v-flex>
             </v-layout>
           </v-card>
         </v-flex>
