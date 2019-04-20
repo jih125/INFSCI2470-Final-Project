@@ -18,17 +18,15 @@
             <v-layout column align-center justify-center>
               <v-flex>
                 <v-layout row wrap align-start>
-                  <v-item-group multiple>
-                    <v-item v-for="item in topicItems" :key="item.title">
-                      <v-chip
-                        slot-scope="{active, toggle}"
-                        :selected="active"
-                        @click="toggle"
-                        color="green"
-                        dark
-                      >{{item.title}}</v-chip>
-                    </v-item>
-                  </v-item-group>
+                  <v-item v-for="item in topicItems" :key="item.title">
+                    <v-chip
+                      slot-scope="{active, toggle}"
+                      :selected="active"
+                      @click="toggle"
+                      color="green"
+                      dark
+                    >{{item.title}}</v-chip>
+                  </v-item>
                 </v-layout>
               </v-flex>
               <v-flex>
@@ -89,7 +87,7 @@
                 <v-subheader>Your current topic score:</v-subheader>
                 <v-layout column align-center justify-center>
                   <v-flex xl4>
-                    <v-card flat>
+                    <v-card flat href="/Leaderboard">
                       <v-progress-circular
                         :rotate="-90"
                         size="150"
@@ -109,7 +107,7 @@
             <v-flex xl4 lg6 sm8 md5>
               <v-card>
                 <v-list subheader>
-                  <v-subheader>Leaderboard</v-subheader>
+                  <v-subheader>Topic Ranking:</v-subheader>
                   <v-list-tile avatar v-for="item in items" :key="item.title" @click>
                     <v-list-tile-content>
                       <v-list-tile-title v-html="item.number"></v-list-tile-title>
@@ -121,7 +119,40 @@
                       <v-list-tile-title v-html="item.title"></v-list-tile-title>
                     </v-list-tile-content>
                     <v-list-tile-action>
-                      <v-icon :color="item.active ? 'teal' : 'grey'">gamepad</v-icon>
+                      <v-flex>
+                        <v-dialog v-model="dialog2" max-width="400">
+                          <template v-slot:activator="{ on }">
+                            <v-btn flat icon v-on="on">
+                              <v-icon :color="item.active ? 'teal' : 'grey'">gamepad</v-icon>
+                            </v-btn>
+                          </template>
+                          <v-card>
+                            <v-container fluid>
+                              <v-layout column wrap align-center justify-center>
+                                <v-card-title class="headline">Challenge Start</v-card-title>
+                                <v-flex>
+                                  <v-card-text>You're gonna Challenge your friend. Are you sure you want to start now?</v-card-text>
+                                </v-flex>
+                                <v-card-actions>
+                                  <v-spacer></v-spacer>
+                                  <v-container fluid>
+                                    <v-layout align-center justify-center>
+                                      <v-btn
+                                        color="red"
+                                        large
+                                        round
+                                        dark
+                                        @click="dialog2 = false"
+                                      >Cancel</v-btn>
+                                      <v-btn color="green" large round dark href="/game">Start!</v-btn>
+                                    </v-layout>
+                                  </v-container>
+                                </v-card-actions>
+                              </v-layout>
+                            </v-container>
+                          </v-card>
+                        </v-dialog>
+                      </v-flex>
                     </v-list-tile-action>
                   </v-list-tile>
                 </v-list>
