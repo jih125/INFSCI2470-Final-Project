@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-toolbar color="indigo" dark>
+    <v-toolbar color="primary" dark>
       <v-toolbar-side-icon @click.stop="sideNav = !sideNav" class="hidden-sm-and-up"></v-toolbar-side-icon>
       <v-toolbar-title class="text-uppercase">
         <span class="font-weight-light">My</span>
@@ -67,7 +67,7 @@ export default {
           title: "Home",
           link: "/Home"
         },
-        { icon: "people", title: "Challenge", link: "/Challange" },
+        { icon: "people", title: "Leaderboard", link: "/Leaderboard" },
         { icon: "person", title: "Profile", link: "/Profile" }
       ],
       list: [
@@ -76,7 +76,7 @@ export default {
           title: "Home",
           link: "/Home"
         },
-        { icon: "people", title: "Challenge", link: "/Challange" },
+        { icon: "people", title: "Leaderboard", link: "/Leaderboard" },
         { icon: "person", title: "Profile", link: "/Profile" },
         { icon: "exit_to_app", title: "Sign Out", link: "/" }
       ],

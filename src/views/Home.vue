@@ -104,6 +104,9 @@
                 <v-list subheader>
                   <v-subheader>Leaderboard</v-subheader>
                   <v-list-tile avatar v-for="item in items" :key="item.title" @click>
+                    <v-list-tile-content>
+                      <v-list-tile-title v-html="item.number"></v-list-tile-title>
+                    </v-list-tile-content>
                     <v-list-tile-avatar>
                       <img :src="item.avatar">
                     </v-list-tile-avatar>
@@ -111,7 +114,7 @@
                       <v-list-tile-title v-html="item.title"></v-list-tile-title>
                     </v-list-tile-content>
                     <v-list-tile-action>
-                      <v-icon :color="item.active ? 'teal' : 'grey'">chat_bubble</v-icon>
+                      <v-icon :color="item.active ? 'teal' : 'grey'">gamepad</v-icon>
                     </v-list-tile-action>
                   </v-list-tile>
                 </v-list>
@@ -145,20 +148,24 @@ export default {
       items: [
         {
           active: true,
+          number: "1",
           title: "Danlan Huang",
           avatar: "https://randomuser.me/api/portraits/men/85.jpg"
         },
         {
           active: true,
+          number: "2",
           title: "Andrew Mrkva",
           avatar: "https://randomuser.me/api/portraits/men/85.jpg"
         },
         {
           title: "Patrick Hu",
+          number: "3",
           avatar: "https://randomuser.me/api/portraits/men/85.jpg"
         },
         {
           title: "Jane Doe",
+          number: "4",
           avatar: "https://randomuser.me/api/portraits/men/85.jpg"
         }
       ],

@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import Challange from "./views/Challange";
+import Leaderboard from "./views/Leaderboard";
 import Signin from "./views/User/Signin";
 import Signup from "./views/User/Signup";
 import Profile from "./views/Profile";
@@ -39,9 +39,9 @@ export default new Router({
       component: Profile
     },
     {
-      path: "/challange",
-      name: "Challange",
-      component: Challange
+      path: "/Leaderboard",
+      name: "Leaderboard",
+      component: Leaderboard
     },
     {
       path: "/game",

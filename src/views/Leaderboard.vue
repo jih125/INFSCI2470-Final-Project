@@ -18,11 +18,11 @@
             <v-data-table :headers="headers" :items="desserts" :search="search">
               <template v-slot:items="props">
                 <td class="text-xs-left">{{ props.item.name }}</td>
-                <td class="text-xs-right">{{ props.item.calories }}</td>
-                <td class="text-xs-right">{{ props.item.fat }}</td>
-                <td class="text-xs-right">{{ props.item.carbs }}</td>
-                <td class="text-xs-right">{{ props.item.protein }}</td>
-                <td class="text-xs-right">{{ props.item.iron }}</td>
+                <td class="text-xs-right hidden-xs-only">{{ props.item.Anatomy }}</td>
+                <td class="text-xs-right hidden-xs-only">{{ props.item.Physiology }}</td>
+                <td class="text-xs-right hidden-xs-only">{{ props.item.BioChemistry }}</td>
+                <td class="text-xs-right hidden-xs-only">{{ props.item.Selfcare }}</td>
+                <td class="text-xs-right">{{ props.item.Total }}</td>
               </template>
               <v-alert
                 v-slot:no-results
@@ -147,95 +147,95 @@ export default {
         {
           text: "Name",
           align: "left",
-          sortable: false,
+          sortable: true,
           value: "name"
         },
-        { text: "Calories", value: "calories" },
-        { text: "Fat (g)", value: "fat" },
-        { text: "Carbs (g)", value: "carbs" },
-        { text: "Protein (g)", value: "protein" },
-        { text: "Iron (%)", value: "iron" }
+        { text: "Anatomy", value: "Anatomy" },
+        { text: "Physiology", value: "Physiology" },
+        { text: "BioChemistry", value: "BioChemistry" },
+        { text: "Selfcare", value: "Selfcare" },
+        { text: "Total", value: "Total" }
       ],
       desserts: [
         {
           name: "Danlan Huang",
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0,
-          iron: "1%"
+          Anatomy: 159,
+          Physiology: 6.0,
+          BioChemistry: 24,
+          Selfcare: 4.0,
+          Total: "1%"
         },
         {
           name: "Andrew Mrkva",
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3,
-          iron: "1%"
+          Anatomy: 237,
+          Physiology: 9.0,
+          BioChemistry: 37,
+          Selfcare: 4.3,
+          Total: "1%"
         },
         {
           name: "Patrick Hu",
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0,
-          iron: "7%"
+          Anatomy: 262,
+          Physiology: 16.0,
+          BioChemistry: 23,
+          Selfcare: 6.0,
+          Total: "7%"
         },
         {
           name: "Jane Doe",
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3,
-          iron: "8%"
+          Anatomy: 305,
+          Physiology: 3.7,
+          BioChemistry: 67,
+          Selfcare: 4.3,
+          Total: "8%"
         },
         {
           name: "Andy Samberg",
-          calories: 356,
-          fat: 16.0,
-          carbs: 49,
-          protein: 3.9,
-          iron: "16%"
+          Anatomy: 356,
+          Physiology: 16.0,
+          BioChemistry: 49,
+          Selfcare: 3.9,
+          Total: "16%"
         },
         {
           name: "Bruce Wayne",
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0,
-          iron: "0%"
+          Anatomy: 375,
+          Physiology: 0.0,
+          BioChemistry: 94,
+          Selfcare: 0.0,
+          Total: "0%"
         },
         {
           name: "Jimmy Fallon",
-          calories: 392,
-          fat: 0.2,
-          carbs: 98,
-          protein: 0,
-          iron: "2%"
+          Anatomy: 392,
+          Physiology: 0.2,
+          BioChemistry: 98,
+          Selfcare: 0,
+          Total: "2%"
         },
         {
           name: "Kitty Perry",
-          calories: 408,
-          fat: 3.2,
-          carbs: 87,
-          protein: 6.5,
-          iron: "45%"
+          Anatomy: 408,
+          Physiology: 3.2,
+          BioChemistry: 87,
+          Selfcare: 6.5,
+          Total: "45%"
         },
         {
           name: "Lois Lane",
-          calories: 452,
-          fat: 25.0,
-          carbs: 51,
-          protein: 4.9,
-          iron: "22%"
+          Anatomy: 452,
+          Physiology: 25.0,
+          BioChemistry: 51,
+          Selfcare: 4.9,
+          Total: "22%"
         },
         {
           name: "Miley Cyrus",
-          calories: 518,
-          fat: 26.0,
-          carbs: 65,
-          protein: 7,
-          iron: "6%"
+          Anatomy: 518,
+          Physiology: 26.0,
+          BioChemistry: 65,
+          Selfcare: 7,
+          Total: "6%"
         }
       ]
     };
