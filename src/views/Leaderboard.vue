@@ -3,12 +3,12 @@
     <v-container grid-list-xl text-xs-center>
       <v-layout row wrap>
         <v-flex
-          lg7
+          lg8
           sm8
           md7
           offset-sm2
           offset-md0
-          offset-lg1
+          offset-lg0
           order-sm2
           order-xs2
           order-lg1
@@ -86,16 +86,14 @@
               <v-layout row align-center>
                 <v-flex xl4 lg4 md4 v-for="item in items" :key="item">
                   <v-card hover>
-                    <v-container fill-height fluid>
-                      <v-layout column align-center>
-                        <v-card-title primary-title>
-                          <div>
-                            <div>{{item.title}}</div>
-                            <div class="headline">{{item.value}}</div>
-                          </div>
-                        </v-card-title>
-                      </v-layout>
-                    </v-container>
+                    <v-layout column align-center>
+                      <v-card-title primary-title>
+                        <div>
+                          <div>{{item.title}}</div>
+                          <div class="headline">{{item.value}}</div>
+                        </div>
+                      </v-card-title>
+                    </v-layout>
                   </v-card>
                 </v-flex>
               </v-layout>

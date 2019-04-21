@@ -48,16 +48,23 @@
             </v-flex>
             <v-divider></v-divider>
             <v-card-title>
-              <h1>My Performance</h1>
+              <h1>My Quiz History</h1>
             </v-card-title>
-            <v-container fluid grid-list-lg>
+            <v-container fluid grid-list-xl>
               <v-layout row wrap>
-                <v-flex v-for="item in history" :key="item">
-                  <v-card color="primary" dark width="150" hover>
+                <v-flex lg3 v-for="item in history" :key="item">
+                  <v-card color="primary" dark hover>
                     <v-card-text>
-                      <div>{{item.date}}</div>
-                      <!-- <v-spacer></v-spacer> -->
-                      <div>{{item.Topic}}</div>
+                      <h4>Date:</h4>
+                      {{item.date}}
+                      <h4>Topic:</h4>
+                      {{item.Topic}}
+                    </v-card-text>
+                    <v-card-text>
+                      <div>
+                        <h4>Correct rate:</h4>
+                        {{item.rate}}
+                      </div>
                     </v-card-text>
                   </v-card>
                 </v-flex>
@@ -78,37 +85,44 @@ export default {
         {
           date: "04/20/2019",
           Topic: "Anatomy",
-          rate: "9/10"
+          rate: "9/10",
+          color: "primary"
         },
         {
           date: "04/18/2019",
           Topic: "Self-Care",
-          rate: "8/10"
+          rate: "8/10",
+          color: "green"
         },
         {
           date: "04/16/2019",
-          Topic: "Anatomy",
-          rate: "9/10"
+          Topic: "BioChemistry",
+          rate: "9/10",
+          color: "red"
         },
         {
           date: "04/14/2019",
           Topic: "Anatomy",
-          rate: "9/10"
+          rate: "9/10",
+          color: "primary"
+        },
+        {
+          date: "04/10/2019",
+          Topic: "Self-Care",
+          rate: "9/10",
+          color: "green"
+        },
+        {
+          date: "04/10/2019",
+          Topic: "Physiology",
+          rate: "9/10",
+          color: "orange"
         },
         {
           date: "04/10/2019",
           Topic: "Anatomy",
-          rate: "9/10"
-        },
-        {
-          date: "04/10/2019",
-          Topic: "Anatomy",
-          rate: "9/10"
-        },
-        {
-          date: "04/10/2019",
-          Topic: "Anatomy",
-          rate: "9/10"
+          rate: "9/10",
+          color: "primary"
         }
       ]
     };
