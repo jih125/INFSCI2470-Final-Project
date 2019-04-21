@@ -2,7 +2,7 @@
   <div class="dashboard">
     <v-container fluid grid-list-xl>
       <v-layout row wrap>
-        <v-flex d-flex xl6 lg8 sm12 md7 offset-xl0>
+        <v-flex d-flex xl5 lg8 sm12 md7 offset-xl2>
           <v-card>
             <v-subheader>Set up your quiz</v-subheader>
             <v-flex>
@@ -58,7 +58,7 @@
             </v-layout>
           </v-card>
         </v-flex>
-        <v-flex d-flex xl4 lg4 md5>
+        <v-flex d-flex xl3 lg4 md5>
           <v-layout column>
             <v-flex xl3 lg4 md4 sm6 offset-md0 offset-xl0>
               <v-card>
@@ -71,7 +71,7 @@
                     <v-layout row align-center justify-center>
                       <v-flex>
                         <v-avatar size="100px">
-                          <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Avatar">
+                          <img src="../assets/Danlan_Huang.png" alt="Avatar">
                         </v-avatar>
                       </v-flex>
                       <v-card-title>
@@ -119,11 +119,6 @@
                     <v-list-tile-content>
                       <v-list-tile-title v-html="item.title"></v-list-tile-title>
                     </v-list-tile-content>
-                    <!-- <v-list-tile-content> -->
-                    <!-- <v-list-tile-title v-html="item.number"></v-list-tile-title> -->
-
-                    <!-- </v-layout> -->
-                    <!-- </v-list-tile-content> -->
                     <v-list-tile-action>
                       <v-flex>
                         <v-dialog v-model="dialog2" max-width="400">
@@ -237,9 +232,7 @@ export default {
         { number: "2", title: "Self Care" },
         { number: "3", title: "Physiology" },
         { number: "4", title: "BioChemestry" }
-      ],
-      text:
-        "Lorem ipsum dolor nt ut labore et dolore magna aliqua. U quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      ]
     };
   }
 };

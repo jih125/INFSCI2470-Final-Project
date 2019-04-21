@@ -31,7 +31,7 @@
                   <br>
                   <v-layout column align-center>
                     <v-avatar size="100px">
-                      <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Avatar">
+                      <img src="../assets/Danlan_Huang.png" alt="Avatar">
                     </v-avatar>
                   </v-layout>
                 </v-card>
@@ -50,12 +50,19 @@
             <v-card-title>
               <h1>My Performance</h1>
             </v-card-title>
-            <v-flex xs12 offset-xl9 offset-xs6 offset-sm8>
-              <v-btn-toggle v-model="text">
-                <v-btn value="Today">Today</v-btn>
-                <v-btn value="Overall">Overall</v-btn>
-              </v-btn-toggle>
-            </v-flex>
+            <v-container fluid grid-list-lg>
+              <v-layout row wrap>
+                <v-flex v-for="item in history" :key="item">
+                  <v-card color="primary" dark width="150" hover>
+                    <v-card-text>
+                      <div>{{item.date}}</div>
+                      <!-- <v-spacer></v-spacer> -->
+                      <div>{{item.Topic}}</div>
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </v-container>
           </v-card>
         </v-flex>
       </v-layout>
@@ -64,7 +71,49 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      history: [
+        {
+          date: "04/20/2019",
+          Topic: "Anatomy",
+          rate: "9/10"
+        },
+        {
+          date: "04/18/2019",
+          Topic: "Self-Care",
+          rate: "8/10"
+        },
+        {
+          date: "04/16/2019",
+          Topic: "Anatomy",
+          rate: "9/10"
+        },
+        {
+          date: "04/14/2019",
+          Topic: "Anatomy",
+          rate: "9/10"
+        },
+        {
+          date: "04/10/2019",
+          Topic: "Anatomy",
+          rate: "9/10"
+        },
+        {
+          date: "04/10/2019",
+          Topic: "Anatomy",
+          rate: "9/10"
+        },
+        {
+          date: "04/10/2019",
+          Topic: "Anatomy",
+          rate: "9/10"
+        }
+      ]
+    };
+  }
+};
 </script>
 
 <style>

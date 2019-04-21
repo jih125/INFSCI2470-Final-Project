@@ -2,7 +2,18 @@
   <div class="challenge">
     <v-container grid-list-xl text-xs-center>
       <v-layout row wrap>
-        <v-flex lg8 sm8 md7 offset-sm2 offset-md0 order-sm2 order-xs2 order-lg1 order-xl1>
+        <v-flex
+          lg7
+          sm8
+          md7
+          offset-sm2
+          offset-md0
+          offset-lg1
+          order-sm2
+          order-xs2
+          order-lg1
+          order-xl1
+        >
           <v-card>
             <v-card-title>
               Leaderboard
@@ -55,10 +66,10 @@
               src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
             >
               <v-container fill-height fluid>
-                <v-layout column align-center>
+                <v-layout column align-center justify-center>
                   <v-flex>
                     <v-avatar size="80px">
-                      <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Avatar">
+                      <img src="../assets/Danlan_Huang.png" alt="Avatar">
                     </v-avatar>
                     <v-card-title primary-title>
                       <div>
@@ -73,42 +84,14 @@
             </v-img>
             <v-container fill-height fluid>
               <v-layout row align-center>
-                <v-flex xl4 lg4 md4>
+                <v-flex xl4 lg4 md4 v-for="item in items" :key="item">
                   <v-card hover>
                     <v-container fill-height fluid>
                       <v-layout column align-center>
                         <v-card-title primary-title>
                           <div>
-                            <div>Score</div>
-                            <div class="headline">1500</div>
-                          </div>
-                        </v-card-title>
-                      </v-layout>
-                    </v-container>
-                  </v-card>
-                </v-flex>
-                <v-flex xl4 lg4 md4>
-                  <v-card hover>
-                    <v-container fill-height fluid>
-                      <v-layout column align-center>
-                        <v-card-title primary-title>
-                          <div>
-                            <div>Studied</div>
-                            <div class="headline">6</div>
-                          </div>
-                        </v-card-title>
-                      </v-layout>
-                    </v-container>
-                  </v-card>
-                </v-flex>
-                <v-flex xl4 lg4 md4>
-                  <v-card hover>
-                    <v-container fill-height fluid>
-                      <v-layout column align-center>
-                        <v-card-title primary-title>
-                          <div>
-                            <div>Friends</div>
-                            <div class="headline">5</div>
+                            <div>{{item.title}}</div>
+                            <div class="headline">{{item.value}}</div>
                           </div>
                         </v-card-title>
                       </v-layout>
@@ -238,6 +221,20 @@ export default {
           BioChemistry: 65,
           Selfcare: 7,
           Total: "6%"
+        }
+      ],
+      items: [
+        {
+          title: "Score",
+          value: "1500"
+        },
+        {
+          title: "Completed:",
+          value: "8"
+        },
+        {
+          title: "Friends",
+          value: "5"
         }
       ]
     };
