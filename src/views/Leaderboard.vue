@@ -19,10 +19,10 @@
               <v-data-table :headers="headers" :items="desserts" :search="search">
                 <template v-slot:items="props">
                   <td class="text-xs-left">{{ props.item.name }}</td>
-                  <td class="text-xs-right hidden-xs-only">{{ props.item.Anatomy }}</td>
-                  <td class="text-xs-right hidden-xs-only">{{ props.item.Physiology }}</td>
-                  <td class="text-xs-right hidden-xs-only">{{ props.item.BioChemistry }}</td>
-                  <td class="text-xs-right hidden-xs-only">{{ props.item.Selfcare }}</td>
+                  <td class="text-xs-right">{{ props.item.Anatomy }}</td>
+                  <td class="text-xs-right">{{ props.item.Physiology }}</td>
+                  <td class="text-xs-right">{{ props.item.BioChemistry }}</td>
+                  <td class="text-xs-right">{{ props.item.Selfcare }}</td>
                   <td class="text-xs-right">{{ props.item.Total }}</td>
                 </template>
                 <v-alert

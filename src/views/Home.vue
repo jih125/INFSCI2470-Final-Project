@@ -110,6 +110,7 @@
                   <v-subheader>Topic Ranking:</v-subheader>
                   <v-list-tile avatar v-for="item in items" :key="item.title" @click>
                     <v-list-tile-content>
+                      <!-- <v-layout row> -->
                       <v-list-tile-title v-html="item.number"></v-list-tile-title>
                     </v-list-tile-content>
                     <v-list-tile-avatar>
@@ -118,6 +119,11 @@
                     <v-list-tile-content>
                       <v-list-tile-title v-html="item.title"></v-list-tile-title>
                     </v-list-tile-content>
+                    <!-- <v-list-tile-content> -->
+                    <!-- <v-list-tile-title v-html="item.number"></v-list-tile-title> -->
+
+                    <!-- </v-layout> -->
+                    <!-- </v-list-tile-content> -->
                     <v-list-tile-action>
                       <v-flex>
                         <v-dialog v-model="dialog2" max-width="400">
