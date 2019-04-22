@@ -16,18 +16,20 @@
             </v-flex>
             <v-subheader>Choose your topic</v-subheader>
             <v-layout column align-center justify-center>
-              <v-flex>
-                <v-layout row wrap align-start>
-                  <v-item v-for="item in topicItems" :key="item.title">
-                    <v-chip
-                      slot-scope="{active, toggle}"
-                      :selected="active"
-                      @click="toggle"
-                      color="green"
-                      dark
-                    >{{item.title}}</v-chip>
-                  </v-item>
-                </v-layout>
+              <v-flex d-flex>
+                <v-card flat>
+                  <v-layout row wrap align-start>
+                    <v-item v-for="item in topicItems" :key="item.title">
+                      <v-chip
+                        slot-scope="{active, toggle}"
+                        :selected="active"
+                        @click="toggle"
+                        color="green"
+                        dark
+                      >{{item.title}}</v-chip>
+                    </v-item>
+                  </v-layout>
+                </v-card>
               </v-flex>
               <v-flex>
                 <v-dialog v-model="dialog" max-width="400">
@@ -63,9 +65,15 @@
                     <p>Once you select the quiz topic, please click the "SUBMIT" button and select the difficulty level.</p>
                     <p>There are three levels provided for your game:</p>
                     <p>
-                      <li>Entry: 10 questions per quiz, 100 credits per question, 60 seconds;</li>
-                      <li>Intermediate: 15 questions per quiz, 100 credits per question, 60 seconds;</li>
-                      <li>Hard: 20 questions per quiz, 100 credits per question, 60 seconds;</li>
+                      <li>
+                        <b>Entry:</b> 10 questions per quiz, 100 credits per question, 60 seconds;
+                      </li>
+                      <li>
+                        <b>Intermediate:</b> 15 questions per quiz, 100 credits per question, 60 seconds;
+                      </li>
+                      <li>
+                        <b>Hard:</b> 20 questions per quiz, 120 credits per question, 60 seconds;
+                      </li>
                     </p>
                     <p>Plus, you'll get bonus credits if you answer your question correctly and fast within 30 secs!!!</p>
                     <p>Good luck! May the force be with you.</p>
@@ -126,15 +134,16 @@
                 <v-list subheader>
                   <v-subheader>Topic Ranking: Anatomy (temporary)</v-subheader>
                   <v-list-tile avatar v-for="item in items" :key="item.title" @click>
+                    <v-list-tile-content>
+                      <v-list-tile-title v-html="item.number"></v-list-tile-title>
+                    </v-list-tile-content>
                     <v-list-tile-avatar>
                       <img :src="item.avatar">
                     </v-list-tile-avatar>
                     <v-list-tile-content>
                       <v-list-tile-title v-html="item.title"></v-list-tile-title>
                     </v-list-tile-content>
-                    <v-list-tile-content>
-                      <v-list-tile-title v-html="item.number"></v-list-tile-title>
-                    </v-list-tile-content>
+
                     <v-list-tile-action>
                       <v-flex>
                         <v-dialog v-model="dialog2" max-width="400">
