@@ -6,9 +6,11 @@
           lg8
           sm8
           md7
+          xl7
           offset-sm2
           offset-md0
           offset-lg0
+          offset-xl1
           order-sm2
           order-xs2
           order-lg1
@@ -29,13 +31,13 @@
             <v-flex>
               <v-data-table :headers="headers" :items="desserts" :search="search">
                 <template v-slot:items="props">
+                  <td class="text-xs-center">{{ props.item.Ranking}}</td>
                   <td class="text-xs-left">{{ props.item.name }}</td>
-                  <td class="text-xs-right">{{ props.item.Anatomy }}</td>
-                  <td class="text-xs-right">{{ props.item.Physiology }}</td>
-                  <td class="text-xs-right">{{ props.item.BioChemistry }}</td>
-                  <td class="text-xs-right">{{ props.item.Selfcare }}</td>
-                  <td class="text-xs-right">{{ props.item.Total }}</td>
-                  <td class="text-xs-right">{{ props.item.Ranking}}</td>
+                  <td class="text-xs-center">{{ props.item.Anatomy }}</td>
+                  <td class="text-xs-center">{{ props.item.Physiology }}</td>
+                  <td class="text-xs-center">{{ props.item.BioChemistry }}</td>
+                  <td class="text-xs-center">{{ props.item.Selfcare }}</td>
+                  <td class="text-xs-center">{{ props.item.Total }}</td>
                 </template>
                 <v-alert
                   v-slot:no-results
@@ -99,7 +101,7 @@
                 </v-flex>
               </v-layout>
             </v-container>
-            <v-subheader>Your score</v-subheader>
+            <v-subheader>Your Anatomy score</v-subheader>
             <v-flex xl4>
               <v-card flat>
                 <v-progress-circular
@@ -128,6 +130,7 @@ export default {
     return {
       search: "",
       headers: [
+        { text: "Ranking", value: "Ranking" },
         {
           text: "Name",
           align: "left",
@@ -138,97 +141,104 @@ export default {
         { text: "Physiology", value: "Physiology" },
         { text: "BioChemistry", value: "BioChemistry" },
         { text: "Selfcare", value: "Selfcare" },
-        { text: "Total", value: "Total" },
-        { text: "Ranking", value: "Ranking" }
+        { text: "Total", value: "Total" }
       ],
       desserts: [
         {
           name: "Danlan Huang",
-          Anatomy: "5/10",
-          Physiology: "12/15",
-          BioChemistry: "5/10",
-          Selfcare: "5/10",
-          Total: "20/40",
-          Ranking: "#1"
+          Anatomy: 1500,
+          Physiology: 1400,
+          BioChemistry: 1700,
+          Selfcare: 1600,
+          Total: 6200,
+          Ranking: 1
         },
         {
           name: "Andrew Mrkva",
-          Anatomy: 237,
-          Physiology: 9.0,
-          BioChemistry: 37,
-          Selfcare: 4.3,
-          Total: "1%",
-          Ranking: "#2"
+          Anatomy: 1400,
+          Physiology: 1600,
+          BioChemistry: 1400,
+          Selfcare: 1500,
+          Total: 5900,
+          Ranking: 2
         },
         {
           name: "Patrick Hu",
-          Anatomy: 262,
-          Physiology: 16.0,
-          BioChemistry: 23,
-          Selfcare: 6.0,
-          Total: "7%"
+          Anatomy: 1400,
+          Physiology: 1300,
+          BioChemistry: 1500,
+          Selfcare: 1400,
+          Total: 5600,
+          Ranking: 3
         },
         {
           name: "Jane Doe",
-          Anatomy: 305,
-          Physiology: 3.7,
-          BioChemistry: 67,
-          Selfcare: 4.3,
-          Total: "8%"
+          Anatomy: 1400,
+          Physiology: 1400,
+          BioChemistry: 1400,
+          Selfcare: 1300,
+          Total: 5500,
+          Ranking: 4
         },
         {
           name: "Andy Samberg",
-          Anatomy: 356,
-          Physiology: 16.0,
-          BioChemistry: 49,
-          Selfcare: 3.9,
-          Total: "16%"
+          Anatomy: 1400,
+          Physiology: 1200,
+          BioChemistry: 1400,
+          Selfcare: 1300,
+          Total: 5300,
+          Ranking: 5
         },
         {
           name: "Bruce Wayne",
-          Anatomy: 375,
-          Physiology: 0.0,
-          BioChemistry: 94,
-          Selfcare: 0.0,
-          Total: "0%"
+          Anatomy: 1400,
+          Physiology: 1300,
+          BioChemistry: 1400,
+          Selfcare: 1200,
+          Total: 5300,
+          Ranking: 5
         },
         {
           name: "Jimmy Fallon",
-          Anatomy: 392,
-          Physiology: 0.2,
-          BioChemistry: 98,
-          Selfcare: 0,
-          Total: "2%"
+          Anatomy: 1300,
+          Physiology: 1300,
+          BioChemistry: 1300,
+          Selfcare: 1200,
+          Total: 5100,
+          Ranking: 7
         },
         {
           name: "Kitty Perry",
-          Anatomy: 408,
-          Physiology: 3.2,
-          BioChemistry: 87,
-          Selfcare: 6.5,
-          Total: "45%"
+          Anatomy: 1100,
+          Physiology: 1300,
+          BioChemistry: 1300,
+          Selfcare: 1200,
+          Total: 4900,
+          Ranking: 8
         },
         {
           name: "Lois Lane",
-          Anatomy: 452,
-          Physiology: 25.0,
-          BioChemistry: 51,
-          Selfcare: 4.9,
-          Total: "22%"
+          Anatomy: 1200,
+          Physiology: 1200,
+          BioChemistry: 1200,
+          Selfcare: 1200,
+          Total: 4800,
+          Ranking: 9
         },
         {
           name: "Miley Cyrus",
-          Anatomy: 518,
-          Physiology: 26.0,
-          BioChemistry: 65,
-          Selfcare: 7,
-          Total: "6%"
+          Anatomy: 1200,
+          Physiology: 1200,
+          BioChemistry: 1200,
+          Selfcare: 1000,
+          Total: 4600,
+          Ranking: 10
         }
       ],
       items: [
         {
           title: "Score",
-          value: "1500"
+          value: "6200"
         },
         {
           title: "Completed:",
@@ -236,7 +246,7 @@ export default {
         },
         {
           title: "Friends",
-          value: "5"
+          value: "10"
         }
       ]
     };
