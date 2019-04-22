@@ -6,6 +6,7 @@ import Signin from "./views/User/Signin";
 import Signup from "./views/User/Signup";
 import Profile from "./views/Profile";
 import game from "./views/Quizgame/game";
+import summary from "./views/Quizgame/Summary";
 
 Vue.use(Router);
 
@@ -47,6 +48,11 @@ export default new Router({
       path: "/game",
       name: "Game",
       component: game
+    },
+    {
+      path: "/game/summary",
+      name: "Game",
+      component: summary
     }
   ]
 });

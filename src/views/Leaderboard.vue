@@ -142,11 +142,11 @@ export default {
       desserts: [
         {
           name: "Danlan Huang",
-          Anatomy: 159,
-          Physiology: 6.0,
-          BioChemistry: 24,
-          Selfcare: 4.0,
-          Total: "1%"
+          Anatomy: "5/10",
+          Physiology: "5/10",
+          BioChemistry: "5/10",
+          Selfcare: "5/10",
+          Total: "20/40"
         },
         {
           name: "Andrew Mrkva",

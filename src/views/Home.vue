@@ -41,7 +41,7 @@
                       <v-layout column align-center justify-center>
                         <v-card-title class="headline">Set your Quiz</v-card-title>
                         <v-select :items="number" label="Number of Questions"></v-select>
-                        <v-select :items="time" label="Time Limits per Questions"></v-select>
+                        <!-- <v-select :items="time" label="Time Limits per Questions"></v-select> -->
                         <v-card-actions>
                           <v-spacer></v-spacer>
                           <v-container fluid>
@@ -171,6 +171,7 @@ export default {
   data() {
     return {
       dialog: false,
+      schoolPicker: [],
       cards: [],
       items: [
         {
@@ -196,34 +197,16 @@ export default {
           avatar: "https://randomuser.me/api/portraits/men/85.jpg"
         }
       ],
-      tabItems: [
-        {
-          title: "School of Pharmacy"
-        },
-        {
-          title: "School of Dental Medicine"
-        },
-        {
-          title: "School of Computing and Information"
-        },
-        {
-          title: "School of Health and Rehabilitation Science"
-        },
-        {
-          title: "School of Medicine"
-        },
-        {
-          title: "School of Nursing"
-        },
-        {
-          title: "Swanson School of Engineering"
-        },
-        {
-          title: "School of Public Health"
-        },
-        {
-          title: "School of Social Work"
-        }
+      school: [
+        "School of Pharmacy",
+        "School of Dental Medicine",
+        "School of Computing and Information",
+        "School of Health and Rehabilitation Science",
+        "School of Medicine",
+        "School of Nursing",
+        "Swanson School of Engineering",
+        "School of Public Health",
+        "School of Social Work"
       ],
       number: ["1", "5", "10", "15", "All"],
       time: ["Unlimited", "5", "10", "15", "30", "60"],

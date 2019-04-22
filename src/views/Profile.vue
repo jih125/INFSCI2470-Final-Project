@@ -69,6 +69,9 @@
                   </v-card>
                 </v-flex>
               </v-layout>
+              <div class="text-xs-center">
+                <v-pagination v-model="page" :length="2" circle></v-pagination>
+              </div>
             </v-container>
           </v-card>
         </v-flex>
@@ -81,6 +84,7 @@
 export default {
   data() {
     return {
+      page: "1",
       history: [
         {
           date: "04/20/2019",
