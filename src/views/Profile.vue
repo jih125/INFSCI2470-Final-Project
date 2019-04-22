@@ -50,29 +50,29 @@
             <v-card-title>
               <h1>My Quiz History</h1>
             </v-card-title>
-            <v-container fluid grid-list-xl>
-              <v-layout row wrap>
-                <v-flex lg3 v-for="item in history" :key="item">
-                  <v-card color="primary" dark hover>
-                    <v-card-text>
-                      <h4>Date:</h4>
-                      {{item.date}}
-                      <h4>Topic:</h4>
-                      {{item.Topic}}
-                    </v-card-text>
-                    <v-card-text>
-                      <div>
+            <v-flex>
+              <v-container fluid fill-height grid-list-xs>
+                <v-layout row wrap>
+                  <v-flex lg3 v-for="item in history" :key="item">
+                    <v-card color="primary" dark hover>
+                      <v-card-text>
+                        <h4>Date:</h4>
+                        {{item.date}}
+                        <h4>Topic:</h4>
+                        {{item.Topic}}
+                        <h4>Level:</h4>
+                        {{item.level}}
                         <h4>Correct rate:</h4>
                         {{item.rate}}
-                      </div>
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-              </v-layout>
-              <div class="text-xs-center">
-                <v-pagination v-model="page" :length="2" circle></v-pagination>
-              </div>
-            </v-container>
+                      </v-card-text>
+                    </v-card>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-flex>
+            <div class="text-xs-center">
+              <v-pagination v-model="page" :length="2" circle></v-pagination>
+            </div>
           </v-card>
         </v-flex>
       </v-layout>
@@ -89,42 +89,55 @@ export default {
         {
           date: "04/20/2019",
           Topic: "Anatomy",
+          level: "hard",
           rate: "9/10",
           color: "primary"
         },
         {
           date: "04/18/2019",
           Topic: "Self-Care",
+          level: "Entry",
+
           rate: "8/10",
           color: "green"
         },
         {
           date: "04/16/2019",
           Topic: "BioChemistry",
+          level: "hard",
+
           rate: "9/10",
           color: "red"
         },
         {
           date: "04/14/2019",
           Topic: "Anatomy",
+          level: "intermediate",
+
           rate: "9/10",
           color: "primary"
         },
         {
           date: "04/10/2019",
           Topic: "Self-Care",
+          level: "intermediate",
+
           rate: "9/10",
           color: "green"
         },
         {
           date: "04/10/2019",
           Topic: "Physiology",
+          level: "hard",
+
           rate: "9/10",
           color: "orange"
         },
         {
           date: "04/10/2019",
           Topic: "Anatomy",
+          level: "entry",
+
           rate: "9/10",
           color: "primary"
         }

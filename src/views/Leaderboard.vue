@@ -35,6 +35,7 @@
                   <td class="text-xs-right">{{ props.item.BioChemistry }}</td>
                   <td class="text-xs-right">{{ props.item.Selfcare }}</td>
                   <td class="text-xs-right">{{ props.item.Total }}</td>
+                  <td class="text-xs-right">{{ props.item.Ranking}}</td>
                 </template>
                 <v-alert
                   v-slot:no-results
@@ -137,16 +138,18 @@ export default {
         { text: "Physiology", value: "Physiology" },
         { text: "BioChemistry", value: "BioChemistry" },
         { text: "Selfcare", value: "Selfcare" },
-        { text: "Total", value: "Total" }
+        { text: "Total", value: "Total" },
+        { text: "Ranking", value: "Ranking" }
       ],
       desserts: [
         {
           name: "Danlan Huang",
           Anatomy: "5/10",
-          Physiology: "5/10",
+          Physiology: "12/15",
           BioChemistry: "5/10",
           Selfcare: "5/10",
-          Total: "20/40"
+          Total: "20/40",
+          Ranking: "#1"
         },
         {
           name: "Andrew Mrkva",
@@ -154,7 +157,8 @@ export default {
           Physiology: 9.0,
           BioChemistry: 37,
           Selfcare: 4.3,
-          Total: "1%"
+          Total: "1%",
+          Ranking: "#2"
         },
         {
           name: "Patrick Hu",

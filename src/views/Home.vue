@@ -40,8 +40,7 @@
                     <v-container fluid>
                       <v-layout column align-center justify-center>
                         <v-card-title class="headline">Set your Quiz</v-card-title>
-                        <v-select :items="number" label="Number of Questions"></v-select>
-                        <!-- <v-select :items="time" label="Time Limits per Questions"></v-select> -->
+                        <v-select :items="level" label="Choose your level"></v-select>
                         <v-card-actions>
                           <v-spacer></v-spacer>
                           <v-container fluid>
@@ -56,6 +55,24 @@
                 </v-dialog>
               </v-flex>
             </v-layout>
+            <v-subheader>Tips:</v-subheader>
+            <v-flex>
+              <v-card flat>
+                <v-card-text>
+                  <font color="grey">
+                    <p>Once you select the quiz topic, please click the "SUBMIT" button and select the difficulty level.</p>
+                    <p>There are three levels provided for your game:</p>
+                    <p>
+                      <li>Entry: 10 questions per quiz, 100 credits per question, 60 seconds;</li>
+                      <li>Intermediate: 15 questions per quiz, 100 credits per question, 60 seconds;</li>
+                      <li>Hard: 20 questions per quiz, 100 credits per question, 60 seconds;</li>
+                    </p>
+                    <p>Plus, you'll get bonus credits if you answer your question correctly and fast within 30 secs!!!</p>
+                    <p>Good luck! May the force be with you.</p>
+                  </font>
+                </v-card-text>
+              </v-card>
+            </v-flex>
           </v-card>
         </v-flex>
         <v-flex d-flex xl3 lg4 md5>
@@ -107,17 +124,16 @@
             <v-flex xl4 lg6 sm8 md5>
               <v-card>
                 <v-list subheader>
-                  <v-subheader>Topic Ranking:</v-subheader>
+                  <v-subheader>Topic Ranking: Anatomy (temporary)</v-subheader>
                   <v-list-tile avatar v-for="item in items" :key="item.title" @click>
-                    <v-list-tile-content>
-                      <!-- <v-layout row> -->
-                      <v-list-tile-title v-html="item.number"></v-list-tile-title>
-                    </v-list-tile-content>
                     <v-list-tile-avatar>
                       <img :src="item.avatar">
                     </v-list-tile-avatar>
                     <v-list-tile-content>
                       <v-list-tile-title v-html="item.title"></v-list-tile-title>
+                    </v-list-tile-content>
+                    <v-list-tile-content>
+                      <v-list-tile-title v-html="item.number"></v-list-tile-title>
                     </v-list-tile-content>
                     <v-list-tile-action>
                       <v-flex>
@@ -176,24 +192,24 @@ export default {
       items: [
         {
           active: true,
-          number: "1",
+          number: "#1",
           title: "Danlan Huang",
           avatar: "https://randomuser.me/api/portraits/men/85.jpg"
         },
         {
           active: true,
-          number: "2",
+          number: "#2",
           title: "Andrew Mrkva",
           avatar: "https://randomuser.me/api/portraits/men/85.jpg"
         },
         {
           title: "Patrick Hu",
-          number: "3",
+          number: "#3",
           avatar: "https://randomuser.me/api/portraits/men/85.jpg"
         },
         {
           title: "Jane Doe",
-          number: "4",
+          number: "#4",
           avatar: "https://randomuser.me/api/portraits/men/85.jpg"
         }
       ],
@@ -208,8 +224,11 @@ export default {
         "School of Public Health",
         "School of Social Work"
       ],
-      number: ["1", "5", "10", "15", "All"],
-      time: ["Unlimited", "5", "10", "15", "30", "60"],
+      level: [
+        "Entry(10 questions)",
+        "Intermediate(15 questions)",
+        "Hard(20 questions)"
+      ],
       topicItems: [
         { number: "1", title: "Anatomy" },
         { number: "2", title: "Self Care" },
