@@ -71,11 +71,11 @@ export default {
       btnItems: [
         {
           title: "Play Again",
-          link: "/Home"
+          link: "/game"
         },
         {
           title: "New Quiz",
-          link: "/game"
+          link: "/Home"
         },
         {
           title: "Challenge others",
