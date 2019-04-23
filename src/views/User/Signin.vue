@@ -31,10 +31,15 @@
                   ></v-text-field>
                   <v-text-field
                     v-model="password"
-                    :rules="passwordRules"
+                    :append-icon="show1 ? 'visibility' : 'visibility_off'"
+                    :rules="[rules.required, rules.min]"
+                    :type="show1 ? 'text' : 'password'"
+                    name="input-10-1"
                     label="Password"
+                    hint="At least 8 characters"
                     outline
-                    required
+                    counter
+                    @click:append="show1 = !show1"
                   ></v-text-field>
                 </v-flex>
                 <v-card-text class="text-xs-right">Forgot Password?</v-card-text>
@@ -54,14 +59,20 @@
 <script>
 export default {
   data: () => ({
+    show1: false,
+    password: "",
     valid: false,
     username: "",
     usernameRules: [v => !!v || "Username is required"],
-    password: "",
     passwordRules: [
       v => !!v || "Password is required",
       v => v.length >= 6 || "Password must be more than 6 characters"
-    ]
+    ],
+    rules: {
+      required: value => !!value || "Required.",
+      min: v => v.length >= 8 || "Min 8 characters",
+      emailMatch: () => "The email and password you entered don't match"
+    }
   })
 };
 </script>
